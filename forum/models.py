@@ -28,8 +28,8 @@ class Post(models.Model):
         related_name="like_post",
         blank=True
     )
-    image = models.FileField()
-    is_liked = models.BooleanField()
+    image = models.FileField(null=True)
+    is_liked = models.BooleanField(default=False)
 
 class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)

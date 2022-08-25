@@ -37,6 +37,6 @@ class PostLikedView(generics.UpdateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer 
 
-class PostLikedView(generics.UpdateAPIView):
+class CommentLikedView(generics.UpdateAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer 
