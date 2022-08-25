@@ -3,11 +3,7 @@ from .views import PostViewset
 from django.urls import path
 from .views import *
 
-router = SimpleRouter()
-
-router.register('post', PostViewset)
-urlpatterns = router.urls
-
 urlpatterns = [
+    path('post/', PostViewset.as_view()),
     path('register/', AccountCreateView.as_view()),
 ]
