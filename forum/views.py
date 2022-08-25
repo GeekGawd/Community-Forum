@@ -9,6 +9,6 @@ from .serializers import PostSerializer
 class PostViewset(viewsets.ModelViewSet):
  
     queryset = Post.objects.all()
-    serializer_class = Post
+    serializer_class = PostSerializer
     parser_classes = [parsers.MultiPartParser, parsers.FormParser]
     http_method_names = ['get', 'post', 'patch', 'delete']

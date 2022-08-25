@@ -22,7 +22,7 @@ class Account(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.CharField(max_length=250)
-    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
     liked_by = models.ManyToManyField(
         Account, 
         related_name="like_post",

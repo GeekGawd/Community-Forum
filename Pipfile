@@ -11,6 +11,8 @@ markdown = "*"
 django-filter = "*"
 psycopg2 = "*"
 django-storages = "*"
+boto3 = "*"
+whitenoise = "*"
 
 [dev-packages]
 
