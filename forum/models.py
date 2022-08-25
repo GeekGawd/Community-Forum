@@ -29,3 +29,14 @@ class Post(models.Model):
         blank=True
     )
     image = models.FileField()
+    is_liked = models.BooleanField()
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    message = models.CharField(max_length=250)
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    liked_by = models.ManyToManyField(
+        Account, 
+        related_name="like_comment",
+        blank=True
+    )
