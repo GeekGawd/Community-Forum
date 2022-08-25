@@ -9,5 +9,5 @@ router.register('post', PostViewset)
 urlpatterns = router.urls
 
 urlpatterns = [
-    path('token/', AccountCreateView.as_view()),
+    path('register/', AccountCreateView.as_view()),
 ]
