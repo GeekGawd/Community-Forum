@@ -11,7 +11,7 @@ class PostViewset(generics.GenericAPIView,
                   mixins.DestroyModelMixin):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-    parser_classes = [parsers.MultiPartParser, parsers.FormParser]
+    parser_classes = [parsers.MultiPartParser, parsers.FormParser, parsers.JSONParser]
     
     def get(self, request, *args, **kwargs):
         return super().list(request, *args, **kwargs)
