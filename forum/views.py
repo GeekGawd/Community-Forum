@@ -1,10 +1,8 @@
 from django.shortcuts import render
-
-# Create your views here.
-
+from rest_framework import generics
 from rest_framework import viewsets, parsers
-from .models import  Post
-from .serializers import PostSerializer
+from .models import  Account, Post
+from .serializers import AccountSerializer, PostSerializer
 
 class PostViewset(viewsets.ModelViewSet):
  
@@ -12,3 +10,7 @@ class PostViewset(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     parser_classes = [parsers.MultiPartParser, parsers.FormParser]
     http_method_names = ['get', 'post', 'patch', 'delete']
+
+class AccountCreateView(generics.CreateAPIView):
+    model = Account
+    serializer_class = AccountSerializer
